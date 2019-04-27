@@ -19,13 +19,9 @@ def inp_xi_ni(para):
 def moda(para):
     values = para.values()
     true_values = [item for item in values]
-    values_set = set(values)
-    bigger = 0
-    for item in values_set:
-        if item > bigger:
-            ost_bigger = item
+    bigger = max(true_values)
     try:
-        chislo = true_values.count(ost_bigger)
+        chislo = true_values.count(bigger)
     except:
         print("Похоже, вы не ввели значения xi и ni. Введите эти числа в пункте 1")
     else:
@@ -33,7 +29,7 @@ def moda(para):
         if chislo >= 2:
             return "Моды нету"
         else:
-            return reverse_para[ost_bigger]
+            return reverse_para[bigger]
 
 # медиана
 def mediana(para):
